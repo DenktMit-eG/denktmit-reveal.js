@@ -11,13 +11,17 @@
 
 		<link rel="stylesheet" href="dist/reset.css" />
 		<link rel="stylesheet" href="dist/reveal.css" />
-		<link rel="stylesheet" href="dist/theme/black.css" />
+		<link rel="stylesheet" href="dist/theme/denktmit.css" />
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="dist/plugin/highlight/monokai.css" />
 	</head>
 	<body>
 		<div class="reveal">
+			<header>
+				<img src="img/logo.svg" alt="" width=110 />
+			</header>
+
 			<div class="slides">
 				<section>Slide 1</section>
 				<section>Slide 2</section>
@@ -37,6 +41,10 @@
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+				width: 960,
+				height: 700,
+				margin: 0.2,
+
 			});
 		</script>
 	</body>

@@ -1,0 +1,62 @@
+/**
+ * Sky theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+// Load utils
+@use 'sass:color';
+@use 'template/mixins' as mixins;
+
+$active-color: #2a76dd;
+
+// Inject theme variables (with some overrides)
+@use 'template/settings' with (
+	$background-color: rgb(47, 96, 82),
+	$background: "radial-gradient(at 0% 0%, rgb(5, 45, 121) 0px, rgba(0, 0, 0, 0) 1202.67px), radial-gradient(at 100% 0%, rgb(255, 211, 100) 0px, rgba(0, 0, 0, 0) 1202.67px), radial-gradient(at 100% 100%, rgb(38, 38, 38) 0px, rgba(0, 0, 0, 0) 1202.67px)",
+
+	$main-color: #fff,
+	$main-font: "Poppins, Helvetica Neue, Helvetica, sans-serif",
+
+	$heading-color: #fff,
+	$heading-font: "Poppins, Helvetica Neue, Helvetica, sans-serif",
+	$heading-letter-spacing: -0.05em,
+
+	$link-color: $active-color,
+	$link-color-hover: color.scale($active-color, $lightness: 15%),
+	$selection-color: #fff,
+	$selection-background-color: $active-color,
+
+	$overlay-element-bg-color: '0 0 0',
+	$overlay-element-fg-color: '240 240 240'
+);
+
+// Inject the theme template
+@use 'template/theme';
+
+// Include theme-specific fonts
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700');
+
+// Change text when the background is inverted
+@include mixins.dark-bg-text-color(#fff);
+
+.reveal a {
+	line-height: 1.3em;
+}
+
+.reveal {
+  padding-left: 75px;
+  overflow: show !important;
+}
+
+.reveal > header {
+  position: absolute;
+  top: 13px;
+  left: 33px;
+}
+
+section {
+  background: rgba(255, 255, 255, 0.1);
+  //margin-left: 75px;
+}
